@@ -52,7 +52,8 @@ public int[][] merge(int[][] intervals) {
 ```
 
 
-**Implementation Tips  :flushed:**
+**Implementation Tip  :flushed:**
+
 toArray() is handy if you need to convert from list to array
 
 ### Complexity Analysis
