@@ -15,6 +15,10 @@ Output: [[1,5]]
 Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 
 ```
+### Approach :
+
+![When we can move to only right left](merge-intervals.PNG?raw=true "Title")
+
 ### Implementation
 
 ```java
