@@ -21,7 +21,7 @@ We can solve this problem by following below approach:
 1. First sort all the intervals according to their start times.
 2. Next iterate over the sorted intervals and handle the below 2 cases :
    
-   1. If the start time of current interval is greater than or equal to the end time of the last interval in the list, this means that there is no overlap among the intervals and we don't need to merge intervals in this case. So we add the current interval to the output list as is.
+   1. If the start time of current interval is greater than the end time of the last interval in the list, this means that there is no overlap among the intervals and we don't need to merge intervals in this case. So we add the current interval to the output list as is.
    
    2. Otherwise, it means there is an overlap between intervals and in this case, we update the end time of the last interval in the list with the **maximum among last interval's end time and current interval's end time**
 
