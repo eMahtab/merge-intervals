@@ -62,4 +62,6 @@ Other than the sort invocation, we do a simple linear scan of the list, so the r
 If we can sort intervals in place, we do not need more than constant additional space. Otherwise, we must allocate linear space to store a copy of intervals and sort that.
 
 ## References :
+https://leetcode.com/articles/merge-intervals/
 https://massivealgorithms.blogspot.com/2014/06/leetcode-merge-intervals.html
+
