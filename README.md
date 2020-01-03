@@ -17,8 +17,13 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 
 ```
 ### Approach :
+We can solve this problem by following below approach:
+1. First sort all the intervals according to their start times.
+2. Next iterate over the sorted intervals and handle the 2 cases :
+   i. If the start time of current interval is greater than or equal to the end time of the previous interval, this means that there is no overlap among the intervals. So we add the current interval to the output list as is.
+   ii. Otherwise, it means there is an overlap between intervals and in this case, we update the end time of the last interval in the list with the maximum among last interval's end time and current interval's end time.
 
-![When we can move to only right left](merge-intervals.PNG?raw=true "Title")
+![Merge Intervals Scenarios](merge-intervals.PNG?raw=true "Merge Intervals Scenarios")
 
 ### Implementation
 
