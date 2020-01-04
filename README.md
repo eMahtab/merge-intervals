@@ -16,6 +16,8 @@ Output: [[1,5]]
 Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 
 ```
+**❗️ Note that intervals [1, 2] and [2, 3] are considered an overlap**
+
 ### Approach :
 We can solve this problem by following below approach:
 1. First sort all the intervals according to their start times.
