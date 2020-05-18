@@ -32,24 +32,27 @@ We can solve this problem by following below approach:
 ### Implementation
 
 ```java
-public int[][] merge(int[][] intervals) {
-    if(intervals == null || intervals.length <= 1) {
-	return intervals;
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        List<int[]> list = new ArrayList<>();
+        if(intervals == null || intervals.length <= 1)
+            return intervals;
+        
+        Arrays.sort(intervals, (i1, i2) -> i1[0] - i2[0]);
+        list.add(intervals[0]);
+       
+        for(int i = 1; i < intervals.length; i++) {
+            int[] interval = intervals[i];
+            int[] compareWith = list.get(list.size() - 1);
+            if(interval[0] <= compareWith[1] ) { // Overlapping intervals
+                int end = Math.max(compareWith[1], interval[1]);
+                compareWith[1] = end;    
+            } else { // Non overlapping intervals
+                list.add(interval);   
+            }
+        }
+       return list.toArray(new int[list.size()][]); 
     }
-		
-    Arrays.sort(intervals, (interval1, interval2) -> interval1[0] - interval2[0]);
-		
-    List<int[]> merged = new ArrayList<int[]>();
-    for(int[] interval : intervals) {
-	  if (merged.isEmpty() || merged.get(merged.size()-1)[1] < interval[0]) {
-	           merged.add(interval);
-	  } else {
-             int lastMeetingEnd = merged.get(merged.size()-1)[1];
-	     merged.get(merged.size()-1)[1] = Math.max(lastMeetingEnd, interval[1]);
-	  }
-    }
-		
-   return merged.toArray(new int[merged.size()][]);
 }
 ```
 
